@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>HybridArt</title>
+    <link href="./buttons.css" rel="stylesheet" media="screen">
+    <meta name="robots" content="noindex,follow">
+    <script>
+
+        function callJSM1(){
+            alert("Android调用了JS的callJSM1方法");
+        }
+
+        function callJSM2(){
+            alert("Android调用了JS的callJSM2方法");
+            var a = "Hello world!";
+            return a;
+        }
+
+        function callAndroidUrlLoading(){
+            //create iframe toload url for doing not reload
+            var ifr = document.createElement('iframe');
+            ifr.src = 'penta://1234';
+            ifr.onload = function() {
+                alert('loaded');
+            };
+            document.body.appendChild(ifr);
+            document.body.removeChild(ifr);
+        }
+
+        function callAndroidInterface(){
+            // map,test is equal to the object AndroidtoJs.
+            test.hello("js调用了android中的hello方法");
+        }
+
+        function callAndroidAlert(){
+            alert("JSAlert");
+        }
+        
+    </script>
+</head>
+<body>
+<div id="css">
+    <h2>Web</h2>
+    <a href="" class="button big green" onclick="callAndroidUrlLoading()">Method One<span>shouldOverrideUrlLoading</span></a>
+    <a href="" class="button big blue" onclick="callAndroidInterface()">Method two<span>addJavascriptInterface</span></a>
+    <a href="" class="button big gray" onclick="callAndroidAlert()">Method three<span>onJsAlert</span></a>
+</div>
+</body>
+</html>
