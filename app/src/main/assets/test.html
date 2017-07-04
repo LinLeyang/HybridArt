@@ -8,11 +8,11 @@
     <script>
 
         function callJSM1(){
-            alert("Android调用了JS的callJSM1方法");
+            alert("native call JS method callJSM1()");
         }
 
         function callJSM2(){
-            alert("Android调用了JS的callJSM2方法");
+            alert("native call JS method callJSM2()");
             var a = "Hello world!";
             return a;
         }
@@ -29,8 +29,8 @@
         }
 
         function callAndroidInterface(){
-            // map,test is equal to the object AndroidtoJs.
-            test.hello("js调用了android中的hello方法");
+            // map,'atj' is equal to the object AndroidtoJs.
+            atj.hello("js call method hello in native");
         }
 
         function callAndroidAlert(){
