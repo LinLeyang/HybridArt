@@ -100,6 +100,9 @@ public class BasicInteractionActivity extends AppCompatActivity {
         @JavascriptInterface
         public void hello(String msg) {
             Log.d("web2native", "JavascriptInterface：" + msg);
+            //the method of webview must be called on the same thread
+            //so you can't write like following
+            //webview.loadUrl("javascript:callJSM1()");
         }
     }
 
