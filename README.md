@@ -1,5 +1,5 @@
 # HybridArt
-Android端现阶段所有native与web交互方式的全部简单实现
+Android端现阶段所有native与web 现有的所有交互方式的基本实现
 
 页面展示
 
